@@ -27,13 +27,17 @@ def sign_up():
 
         if len(email) < 4:
             flash('Email must be greater than 3 characters.', category='error')
-        elif len(firstName or lastName or username) < 2:
+        elif len(firstName) < 2:
             flash('First name must be greater than 1 character.', category='error')
+        elif len(lastName) < 2:
+            flash('Last name must be greater than 1 character.', category='error')
+        elif len(username) < 2:
+            flash('Username must be greater than 1 character.', category='error')
         elif password != confirmPassword:
             flash('Passwords do not match.', category='error')
         elif len(password) < 4:
             flash('Password must be at least 3 characters.', category='error')
         else:
-            flash('Account successfully created!', category='error')
+            flash('Account successfully created!', category='success')
 
     return render_template("sign_up.html")
