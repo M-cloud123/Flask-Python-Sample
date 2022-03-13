@@ -25,12 +25,12 @@ def sign_up():
         password = request.form.get('password')
         confirmPassword = request.form.get('confirmPassword')
 
-        if len(email) < 4:
-            flash('Email must be greater than 3 characters.', category='error')
-        elif len(firstName) < 2:
+        if len(firstName) < 2:
             flash('First name must be greater than 1 character.', category='error')
         elif len(lastName) < 2:
             flash('Last name must be greater than 1 character.', category='error')
+        elif len(email) < 4:
+            flash('Email must be greater than 3 characters.', category='error')
         elif len(username) < 2:
             flash('Username must be greater than 1 character.', category='error')
         elif password != confirmPassword:
