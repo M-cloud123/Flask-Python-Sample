@@ -1,3 +1,5 @@
+# for MYSQL, haven't made it work yet
+
 import mysql.connector
 
 mydb = mysql.connector.connect(
